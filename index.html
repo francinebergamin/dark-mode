@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Referências -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Dark & Light Mode</title>
+</head>
+
+<body>
+    <div id="botao">
+      <i class="indicador"></i>
+    </div>
+
+    <script>
+      const body = document.querySelector('body');
+      const toggle = document.getElementById('botao');
+      toggle.onclick = function(){
+        toggle.classList.toggle('active');
+        body.classList.toggle('active');
+      }
+
+    </script>
+
+</body>
+
+</html>
