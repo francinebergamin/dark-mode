@@ -1,16 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
 
 * {
+  user-select: none;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
+
+
+:root {
+  /* White shades */
+  --white: #fdfdfd;
+  --white-2: #dedede;
+  --white-3: #e0e0e0;
+
+  /* Grey shades */
+  --grey: #c8c8c8;
+  --grey-2: #636363;
+  --grey-3: #444;
+  --grey-5: #212121;
+
+  /* Black shades */
+  --black: #0f0f0f;
+  --black-2: #121212;
+  --black-3: #15151539;
+  
+  /* Theme colors */
+  --aqua: #7fffd4e2;
+  --dark-aqua: #7fffd441;
+}
+
+
+footer {
+  bottom: 0;
+  padding-bottom: 1rem;
+  position: fixed;
+}
+
+/* Dark h4 */
+h4 {
+  color: var(--black-2);
+  opacity: 20%;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
 
 /* Body Dark */
 body {
-  background: #121212;
+  background: var(--black-2);
 
   display: flex;
   justify-content: center;
@@ -22,12 +64,14 @@ body {
 }
 
 /* Body Light */
-body.active{
-  background: #ffffff;
+body.active {
+  background: var(--white);
 }
 
-/* Botão Dark */
-#botao {
+
+
+/* Dark Button */
+#button {
   position: relative;
   display: block;
 
@@ -36,17 +80,17 @@ body.active{
 
   border-radius: 20rem;
 
-  background: #212121;
+  background: var(--grey-5);
   box-shadow:
-    inset 0 0.2rem 0.2rem rgb(99, 99, 99),
-    inset 0 0.3rem 0.2rem rgba(21, 21, 21, 0.224),
-    inset 0 -0.1rem 0.5rem rgb(41, 41, 41),
-    inset 0 -0.5rem 0.2rem rgb(15, 15, 15);
+    inset 0 0.2rem 0.2rem var(--grey-2),
+    inset 0 0.3rem 0.2rem var(--black-3),
+    inset 0 -0.1rem 0.5rem var(--grey-5),
+    inset 0 -0.5rem 0.2rem var(--black);
 
   transition: all 0.5s ease;
 }
 
-#botao .indicador {
+#button .indicator {
   cursor: pointer;
 
   position: absolute;
@@ -55,13 +99,14 @@ body.active{
   width: 10rem;
   height: 10rem;
 
-  background: linear-gradient(to bottom, #444, #222);
+  background: linear-gradient(to bottom, var(--grey-3), var(--grey-5));
   border-radius: 50%;
-  border-bottom: 0.2rem solid rgba(127, 255, 212, 0.886);
+  border-bottom: 0.2rem solid var(--aqua);
   box-shadow:
-    inset 0rem 0.2rem 0.1rem #fff,
-    inset 0rem 0rem 1rem rgba(127, 255, 212, 0.254),
-    0rem 0rem 0.5rem rgb(0, 0, 0);;
+    inset 0rem 0.2rem 0.1rem var(--white),
+    inset 0rem 0rem 1rem var(--dark-aqua),
+    0rem 0rem 0.5rem var(--black);
+  ;
 
   transform: scale(0.9);
 
@@ -70,22 +115,24 @@ body.active{
 
 
 
-/* Botão Light */
-#botao.active{
-  background-color: #fff;
-  
+/* Light Button */
+#button.active {
+  background-color: var(--white);
+
   box-shadow:
-    inset 0rem 0.1rem 0.1rem rgb(237, 237, 237),
-    inset 0rem 0rem 1rem rgba(102, 16, 201, 0.104),
-    0rem 0rem 0.5rem rgb(200, 200, 200);;
+    inset 0rem 0.1rem 0.1rem var(--white-2),
+    inset 0rem 0rem 1rem var(--dark-aqua),
+    0rem 0rem 0.5rem var(--grey);
+  ;
 }
 
-#botao.active .indicador{
-  box-shadow: 
-  inset 0rem 0.25rem 0.1rem #fff,
-  inset 0rem 0rem 1rem rgb(222, 222, 222),
-  0rem 0rem 0.5rem rgb(205, 205, 205);
-  border-bottom: 0.2rem solid rgba(172, 127, 255, 0.886);
-  background: linear-gradient(to bottom, rgb(253, 253, 253), rgb(224, 224, 224));
+#button.active .indicator {
+  box-shadow:
+    inset 0rem 0.25rem 0.1rem var(--white),
+    inset 0rem 0rem 1rem var(--white-3),
+    0rem 0rem 0.5rem var(--grey);
+
+  border-bottom: 0.2rem solid var(--aqua);
+  background: linear-gradient(to bottom, var(--white), var(--white-3));
   left: 10rem;
 }

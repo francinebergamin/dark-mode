@@ -13,20 +13,24 @@
 </head>
 
 <body>
-    <div id="botao">
-      <i class="indicador"></i>
+  <main>
+    <div id="button">
+      <i class="indicator"></i>
     </div>
 
     <script>
       const body = document.querySelector('body');
-      const toggle = document.getElementById('botao');
+      const toggle = document.getElementById('button');
       toggle.onclick = function(){
         toggle.classList.toggle('active');
         body.classList.toggle('active');
       }
-
     </script>
-
+  </main>
+    
+  <footer>
+    <h4>Francine Bergamin - 2022</h4>
+  </footer>
 </body>
 
 </html>
